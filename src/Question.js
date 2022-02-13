@@ -6,7 +6,7 @@ export default function Question({ question, answer }) {
         setUserAnswer(input.target.value);
     };
     return (
-        <div style={{borderStyle: 'groove', width: 450, borderColor: 'blue', borderRadius: 15, borderWidth: 2}}>
+        <div style={{borderStyle: 'groove', width: 450, borderColor: 'blue', borderRadius: 20, borderWidth: 2}}>
             <p style={{fontFamily: 'Segoe UI'}}>{question}</p>
             <input type="text" value={userAnswer} style={{ paddingTop: 3.5 }} onChange={handleChange}></input>
             {
