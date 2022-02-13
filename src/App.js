@@ -63,7 +63,7 @@ function App() {
     answerRef.current.value = null;
   };
   return (
-    <div style={{overflowY: 'auto', overflowX: 'auto'}}>
+    <div style={{overflowY: 'auto', overflowX: 'auto', justifyContent: 'spaced-evenly'}}>
       <Quiz questions={questions} />
       <p style={{ fontFamily: 'Segoe UI' }}>Question: </p>
       <input type='text' ref={ref} style={{ fontFamily: 'Segoe UI' }}></input>
