@@ -45,14 +45,14 @@ function App() {
     localStorage.setItem(STORAGE, JSON.stringify(questions));
   }, [questions]);
   const handleClick = (e) => {
-    const question = ref.current.value;
+    const Question = ref.current.value;
     const answer = answerRef.current.value;
-    if (question === '' && answer === '') return
+    if (Question === '' && answer === '') return
     setQuestions(
       prevQuestions => {
         return [...prevQuestions,
           {
-            question: question,
+            question: Question,
             answer: answer,
             id: uuid()
           }
