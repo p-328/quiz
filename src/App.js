@@ -7,6 +7,7 @@ const STORAGE = 'storage.db';
 function App() {
   const ref = useRef();
   const answerRef = useRef();
+  const removeRef = useRef();
   const uuid = require('uuid').v4;
   const [questions, setQuestions] = useState(
     [
@@ -44,7 +45,15 @@ function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE, JSON.stringify(questions));
   }, [questions]);
-  const handleClick = (e) => {
+  const removeQuestion = () => { 
+    const questionNameRef = removeRef.current.value;
+    const newQuestionList = questions.filter(question =>
+      question.item !== questionNameRef
+    );
+    setQuestions(newQuestionList);
+    removeRef.current.value = null;
+  };
+  const handleClick = () => {
     const Question = ref.current.value;
     const answer = answerRef.current.value;
     if (Question === '' && answer === '') return
@@ -70,6 +79,8 @@ function App() {
       <p style={{ fontFamily: 'Segoe UI' }}>Answer: </p>
       <input type='text' ref={answerRef} style={{ fontFamily: 'Segoe UI' }}></input>
       <button style={{ fontFamily: 'Segoe UI' }} onClick={handleClick}>Add question</button>
+      <input ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>
+      <button onClick={removeQuestion}>Remove Question</button>
     </div>
   );
 };
