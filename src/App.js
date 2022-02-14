@@ -47,9 +47,9 @@ function App() {
   }, [questions]);
   const removeQuestion = () => { 
     const questionNameRef = removeRef.current.value;
-    const newQuestionList = questions.filter(question =>
-      question.item !== questionNameRef
-    );
+    const newQuestionList = questions.filter(question => {
+      return (question.item !== questionNameRef);
+    });
     setQuestions(newQuestionList);
     removeRef.current.value = null;
   };
@@ -80,7 +80,7 @@ function App() {
       <input type='text' ref={answerRef} style={{ fontFamily: 'Segoe UI' }}></input>
       <button style={{ fontFamily: 'Segoe UI' }} onClick={handleClick}>Add question</button>
       <input ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>
-      <button onClick={removeQuestion}>Remove Question</button>
+      <button onClick={removeQuestion} style={{ fontFamily: 'Segoe UI' }}>Remove Question</button>
     </div>
   );
 };
