@@ -9,35 +9,7 @@ function App() {
   const answerRef = useRef();
   const removeRef = useRef();
   const uuid = require('uuid').v4;
-  const [questions, setQuestions] = useState(
-    [
-      {
-        question: 'Where does Pastoral Nomadism occur?',
-        answer: 'lesser developed countries',
-        id: uuid()
-      },
-      {
-        question: 'Does C have a garbage collector?',
-        answer: 'no',
-        id: uuid()
-      },
-      {
-        question: 'What type of farming involves slash-and-burn agriculture?',
-        answer: 'shifting cultivation',
-        id: uuid()
-      },
-      {
-        question: 'What is the selling of crops for profit?',
-        answer: 'commercial farming',
-        id: uuid()
-      },
-      {
-        question: 'What does false && true || true return?',
-        answer: 'true',
-        id: uuid()
-      },
-    ]
-  );
+  const [questions, setQuestions] = useState([]);
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem(STORAGE));
     if (items) setQuestions(items);
@@ -79,7 +51,7 @@ function App() {
       <p style={{ fontFamily: 'Segoe UI' }}>Answer: </p>
       <input type='text' ref={answerRef} style={{ fontFamily: 'Segoe UI' }}></input>
       <button style={{ fontFamily: 'Segoe UI' }} onClick={handleClick}>Add question</button>
-      <input ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>
+      <input type='text' ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>
       <button onClick={removeQuestion} style={{ fontFamily: 'Segoe UI' }}>Remove Question</button>
     </div>
   );
