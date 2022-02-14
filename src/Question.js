@@ -8,7 +8,7 @@ export default function Question({ question, answer }) {
     return (
         <div style={{borderStyle: 'dashed', width: 450, borderColor: 'blue', borderRadius: 20, borderWidth: 0.3}}>
             <p style={{fontFamily: 'Segoe UI'}}>{question}</p>
-            <input type="text" value={userAnswer} style={{ paddingTop: 3.5 }} onChange={handleChange} placeholder="answer here"></input>
+            <input type="text" value={userAnswer} style={{ paddingTop: 3.5 }} onChange={handleChange} placeholder="Answer here"></input>
             {
                 userAnswer !== answer ? <p style={{ fontFamily: 'Segoe UI', color: 'red', fontWeight: 'bold' }}>Incorrect</p> :
                 <p style={{ fontFamily: 'Segoe UI', color: 'green', fontWeight: 'bold' }}>Correct!</p>
