@@ -20,7 +20,7 @@ function App() {
   const removeQuestion = () => { 
     const questionNameRef = removeRef.current.value;
     const newQuestionList = questions.filter(question => {
-      return (question.item !== questionNameRef);
+      return (question.question !== questionNameRef);
     });
     setQuestions(newQuestionList);
     removeRef.current.value = null;
