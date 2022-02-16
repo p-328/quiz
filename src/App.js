@@ -49,9 +49,9 @@ function App() {
       <p style={{ fontFamily: 'Segoe UI' }}>Question: </p>
       <input type='text' ref={ref} style={{ fontFamily: 'Segoe UI' }}></input>
       <p style={{ fontFamily: 'Segoe UI' }}>Answer: </p>
-      <input type='text' ref={answerRef} style={{ fontFamily: 'Segoe UI' }}></input>
-      <button style={{ fontFamily: 'Segoe UI' }} onClick={handleClick}>Add question</button>
-      <input type='text' ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>
+      <input type='text' ref={answerRef} style={{ fontFamily: 'Segoe UI' }}></input>{" "}
+      <button style={{ fontFamily: 'Segoe UI' }} onClick={handleClick}>Add question</button>{" "}
+      <input type='text' ref={removeRef} style={{ fontFamily: 'Segoe UI' }} placeholder='Enter question to remove...'></input>{" "}
       <button onClick={removeQuestion} style={{ fontFamily: 'Segoe UI' }}>Remove Question</button>
     </div>
   );
